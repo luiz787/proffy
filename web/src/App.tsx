@@ -1,10 +1,10 @@
 import React from "react";
 
 import "./assets/styles/global.css";
-import LandingPage from "./pages/Landing";
+import Routes from "./routes";
 
 function App() {
-  return <LandingPage />;
+  return <Routes />;
 }
 
 export default App;
