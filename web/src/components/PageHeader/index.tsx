@@ -8,7 +8,7 @@ export interface PageHeaderProps {
   title: string;
 }
 
-const PageHeader: React.SFC<PageHeaderProps> = ({ title }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
   return (
     <header className="page-header">
       <div className="top-bar-container">
