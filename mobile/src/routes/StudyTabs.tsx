@@ -4,27 +4,34 @@ import { Ionicons } from "@expo/vector-icons";
 
 import TeacherList from "../pages/TeacherList";
 import Favorites from "../pages/Favorites";
+import { Platform } from "react-native";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export default function StudyTabs() {
+  const isIos = () => Platform.OS === "ios";
+
   return (
     <Navigator
       tabBarOptions={{
         style: {
           elevation: 0,
           shadowOpacity: 0,
-          height: 64,
+          height: isIos() ? 84 : 64,
         },
         tabStyle: {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
+          paddingBottom: isIos() ? 20 : 0,
+        },
+        safeAreaInsets: {
+          bottom: 0,
         },
         iconStyle: {
           flex: 0,
           width: 20,
-          height: 20,
+          height: isIos() ? 24 : 20,
         },
         labelStyle: {
           fontFamily: "Archivo_700Bold",
